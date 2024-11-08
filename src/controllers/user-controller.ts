@@ -4,7 +4,7 @@ import { Request, Response } from "express";
 
 export class UserController {
   static async create( 
-    req: Request<{}, {}, { login: string; role?: string }>,
+    req: Request<{}, {}, { login: string; roleId?: string }>,
     res: Response
   ): Promise<any> {
     const user = await User.create({ ...req.body });
@@ -23,7 +23,7 @@ export class UserController {
       .status(200)
       .json({message:"List of users",data:JSON.parse(usersFromRedis)});
     }
-   const users=await User.scope("adminUsers").findAll();
+   const users=await User.findAll();
     if (users) {
       console.log("Writing redis...");
       await clientRedis.set("users",JSON.stringify(users),{EX:60});

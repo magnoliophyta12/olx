@@ -24,7 +24,7 @@ import Token from "./token-model.js";
   })
   export class User extends Model {
     @Column({
-      type: DataType.UUID,
+      type: DataType.UUID, 
       primaryKey: true,
       defaultValue:uuidv4(),
     })

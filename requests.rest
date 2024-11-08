@@ -1,22 +1,10 @@
-POST https://127.0.0.1/books HTTP/1.1
-content-type:application/json
-
-{
-    "title":"testbook1"
-}
-
-###
-
-GET https://127.0.0.1/books HTTP/1.1
-
-###
-
 POST https://127.0.0.1/users HTTP/1.1
 content-type:application/json
 
 {
-    "login":"admin2",
-    "role":"admin"
+    "login":"bob",
+    "password":"1244",
+    "roleId":"c6c0044b-4bdf-4c3e-b71b-941cc7dcfb8f"
 }
 ###
 
@@ -24,28 +12,12 @@ GET https://127.0.0.1/users HTTP/1.1
 
 ###
 
-POST https://127.0.0.1/posts HTTP/1.1
+POST https://127.0.0.1/roles HTTP/1.1
 content-type:application/json
 
 {
-    "title":"post",
-    "description":"post description",
-    "userId":"54bb0377-c48f-4798-9ac1-088940fe7875"
+    "name":"admin"
 }
 ###
 
-GET https://127.0.0.1/posts HTTP/1.1
-
-###
-
-POST https://127.0.0.1/profiles HTTP/1.1
-content-type:application/json
-
-{
-    "city":"Odesa",
-    "detail_info":"more info",
-    "userId":"54bb0377-c48f-4798-9ac1-088940fe7875"
-}
-###
-
-GET https://127.0.0.1/profiles HTTP/1.1
+GET https://127.0.0.1/users HTTP/1.1
